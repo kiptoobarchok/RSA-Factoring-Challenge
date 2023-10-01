@@ -1,0 +1,31 @@
+#!/usr/bin/python3
+
+from sys import argv
+
+def factorize(v):
+    """"print a simple descomposition of an integer > 1"""
+    i = 2
+
+    if v < 2:
+        return
+    print()
+    print(v, "<- v-bef")
+    while v % i:
+        i += 1
+    print("{:.0f}={:.0f}*{:.0f}".format(v, v / i, i))
+    print(v, "<- v-aft")
+    print()
+
+if len(argv) != 2:
+    exit()
+
+try:
+    with open(argv[1]) as file:
+        line = file.readline()
+
+        while line != "":
+            value = int(line.split('\n')[0])
+            factorize(v)
+            line = file.readline()
+except:
+    pass
